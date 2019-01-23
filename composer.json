@@ -1,0 +1,17 @@
+{
+    "name": "bbmri/simplesamlphp-module-lshostel",
+    "description": "A SimpleSAMLphp module providing template for DiscoPower and user-facing parts of the SSP for LifeScience Hostel",
+    "version": "1.0.0-dev",
+    "type": "simplesamlphp-module",
+    "keywords": ["bbmri", "bbmri-eric", "lifescience hostel","simplesamlphp"],
+    "license": "BSD-2-Clause",
+    "authors": [
+        {
+            "name": "Pavel Vyskocil",
+            "email": "vyskocilpavel@muni.cz"
+        }
+    ],
+    "require": {
+        "simplesamlphp/composer-module-installer": "~1.0"
+    }
+}
