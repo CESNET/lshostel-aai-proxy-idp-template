@@ -140,11 +140,18 @@ if ($this->data['errorcode'] !== null) {
 
 		<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-10">
-				<button class="btn btn-success"
-						onclick="this.value='<?php echo $this->t('{login:processing}'); ?>';
-							this.disabled=true; this.form.submit(); return true;" tabindex="6">
-					<?php echo $this->t('{login:login_button}'); ?>
-				</button>
+				<div class="col-sm-offset-2 col-sm-4">
+					<button class="btn btn-success"
+							onclick="this.value='<?php echo $this->t('{login:processing}'); ?>';
+								this.disabled=true; this.form.submit(); return true;" tabindex="6">
+						<?php echo $this->t('{login:login_button}'); ?>
+					</button>
+				</div>
+				<div class="col-sm-4">
+					<a href="https://perun.bbmri-eric.eu/non/registrar/?vo=lifescience_hostel" class="btn btn-link btn-block">
+						<?php echo $this->t('{lshostel:lshostel:register_acc_hostel}') ?>
+					</a>
+				</div>
 			</div>
 		</div>
 
