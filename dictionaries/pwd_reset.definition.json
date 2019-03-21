@@ -1,0 +1,32 @@
+{
+  "header": {
+    "en": "Forgot your password?"
+  },
+  "email": {
+    "en": "Email"
+  },
+  "text": {
+    "en": "Enter your email. We'll send you an email with instructions on how to reset your password."
+  },
+  "ok_header": {
+    "en": "Link to reset password has been sent"
+  },
+  "ok_text": {
+    "em": "We have sent you an email with instructions on how to reset your password."
+  },
+  "err_header": {
+    "en": "Something went wrong"
+  },
+  "err_text_part1": {
+    "en": "Please check the filled email is correct."
+  },
+  "err_text_part2": {
+    "en": "If you have problem with recovering your password, please contact "
+  },
+  "support": {
+    "en": "support"
+  },
+  "submit": {
+    "en": "Submit"
+  }
+}

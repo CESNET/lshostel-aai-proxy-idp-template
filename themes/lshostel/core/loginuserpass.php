@@ -1,6 +1,6 @@
 <?php
-//$this->data['header'] = $this->t('{lshostel:lshostel:user_pass_header}');
-$this->data['header'] = "Life Science Hostel Login";
+$this->data['header'] = $this->t('{lshostel:lshostel:user_pass_header}');
+//$this->data['header'] = "Life Science Hostel Login";
 
 if (strlen($this->data['username']) > 0) {
 	$this->data['autofocus'] = 'password';
@@ -139,21 +139,28 @@ if ($this->data['errorcode'] !== null) {
 		?>
 
 		<div class="form-group">
-			<div class="col-sm-offset-2 col-sm-10">
-				<div class="col-sm-offset-2 col-sm-4">
-					<button class="btn btn-success"
-							onclick="this.value='<?php echo $this->t('{login:processing}'); ?>';
-								this.disabled=true; this.form.submit(); return true;" tabindex="6">
-						<?php echo $this->t('{login:login_button}'); ?>
-					</button>
-				</div>
-				<div class="col-sm-4">
-					<a href="https://perun.bbmri-eric.eu/non/registrar/?vo=lifescience_hostel" class="btn btn-link btn-block">
-						<?php echo $this->t('{lshostel:lshostel:register_acc_hostel}') ?>
-					</a>
-				</div>
-			</div>
+			<div class="col-sm-offset-8 col-sm-4">
+                <button class="btn btn-success btn-block"
+                        onclick="this.value='<?php echo $this->t('{login:processing}'); ?>';
+                                this.disabled=true; this.form.submit(); return true;" tabindex="6">
+                    <?php echo $this->t('{login:login_button}'); ?>
+                </button>
+            </div>
+
 		</div>
+
+        <div id="login_form_links" class="row">
+            <div class="col-sm-6">
+                <a href="<?php echo SimpleSAML\Module::getModuleURL("lshostel/pwd_reset.php");?>" class="btn btn-link btn-block">
+                    <?php echo $this->t('{lshostel:lshostel:forgot_password}') ?>
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <a href="https://perun.bbmri-eric.eu/non/registrar/?vo=lifescience_hostel" class="btn btn-link btn-block">
+                    <?php echo $this->t('{lshostel:lshostel:register_acc_hostel}') ?>
+                </a>
+            </div>
+        </div>
 
 		<?php
 		foreach ($this->data['stateparams'] as $name => $value) {

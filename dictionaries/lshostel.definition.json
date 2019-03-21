@@ -13,5 +13,8 @@
   },
   "email": {
     "en": "Email"
+  },
+  "forgot_password": {
+    "en": "Forgot your password? Change it here!"
   }
 }
