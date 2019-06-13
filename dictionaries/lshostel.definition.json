@@ -3,12 +3,15 @@
     "en": "Please provide your mail so that we can contact you for further information or let you know the issue was fixed."
   },
   "user_pass_header": {
-    "en": "Life Science Hostel IdP Login"
+    "en": "Life Science Hostel Login"
   },
   "user_pass_text": {
-    "en": "Enter your username and password"
+    "en": "Enter your email and password"
   },
   "register_acc_hostel": {
     "en": "Don't have account? Sign up here!"
+  },
+  "email": {
+    "en": "Email"
   }
 }

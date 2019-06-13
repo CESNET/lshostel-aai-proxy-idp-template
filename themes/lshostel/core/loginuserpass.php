@@ -45,7 +45,7 @@ if ($this->data['errorcode'] !== null) {
 	<form action="?" method="post" name="f" class="form-horizontal">
 
 		<div class="form-group">
-			<label for="username" class="col-sm-2 control-label"><?php echo $this->t('{login:username}'); ?></label>
+			<label for="username" class="col-sm-2 control-label"><?php echo $this->t('{lshostel:lshostel:email}'); ?></label>
 			<div class="col-sm-10">
 				<input id="username" <?php echo ($this->data['forceUsername']) ? 'disabled="disabled"' : ''; ?>
 					   type="text" name="username" class="form-control"
