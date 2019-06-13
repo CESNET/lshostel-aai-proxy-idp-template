@@ -68,3 +68,9 @@ hr {
 #footer img {
 	margin: 0px 16px;
 }
+
+
+#login_form_links {
+	margin-top: 50px;
+	margin-bottom: -32px;
+}

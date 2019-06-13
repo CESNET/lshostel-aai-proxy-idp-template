@@ -2,6 +2,8 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+#### Added
+- Added possibility to recover LS Hostel password
 #### Changed
 - Use email as identifier instead of username
 
