@@ -27,7 +27,11 @@ $t->show();
 
 function sendPasswordResetEmail($userName) {
     $rpcAdapter = new sspmod_perun_AdapterRpc();
-    $userName = str_replace('@', '_', $userName);
+
+    $userName = trim($userName);
+    $userNameParts = explode('@', $userName, 2);
+    $userName = $userNameParts[0] . '_' . strtolower($userNameParts[1]);
+
     $uid = [$userName . LSHOSTEL_SCOPE];
     $user = null;
     try {

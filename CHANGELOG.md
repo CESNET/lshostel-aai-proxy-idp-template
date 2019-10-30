@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+#### Added
+- Added new filter which converts login domain to lowercase and trim whitespaces
+- Added .gitignore
+
+#### Changed
+- Some fields on forms are now prefilled if the data are accessible 
 
 ## [v1.1.0]
 #### Added
