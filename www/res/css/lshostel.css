@@ -1,8 +1,8 @@
 body {
-
+	padding-top: 0;
 }
 .ui-widget-content {
-	border: 0px solid #ddd;
+	border: 0 solid #ddd;
 }
 
 
@@ -15,18 +15,18 @@ body {
 	color: #222;
 }
 #header img {
-	/* width: 170px; */
-	/* margin: -16px auto 0 auto; */
-	margin: 0 auto 0 auto;
+	margin: 0 auto;
 }
-
 
 #wrap {
         margin: 2em auto;
-        max-width: 720px;
+        max-width: 1024px;
 }
 #content {
-	margin-top: 0px;
+	padding-left: 5%;
+	padding-right: 5%;
+	margin-top: 15vw;
+	margin-bottom: 15vw;
 }
 
 .btn:hover {
@@ -34,12 +34,12 @@ body {
 }
 
 .ui-widget-header {
-	border-width: 0px;
+	border-width: 0;
 	border-bottom: 1px solid #ddd;
 	background: transparent;
 }
 .ui-widget-header .ui-state-default {
-	border: 0px;
+	border: 0;
 	background: #fff;
 	color: #337ab7;
 }
@@ -54,23 +54,32 @@ body {
         background: #fff;
 }
 
+.col-align-center {
+	float: none;
+	display: inline-block;
+	vertical-align: middle;
+}
 
 hr {
 	border-top: 1px solid #ddd;
 }
 
 #footer {
-	margin-top: 64px;
+	margin-top: 0;
 	border-top: 1px solid #ddd;
 	text-align: left;
 	padding: 16px;
 }
 #footer img {
-	margin: 0px 16px;
+	margin: 0 16px;
 }
 
 
 #login_form_links {
 	margin-top: 50px;
 	margin-bottom: -32px;
+}
+
+.logo-wrap img {
+	margin: auto;
 }

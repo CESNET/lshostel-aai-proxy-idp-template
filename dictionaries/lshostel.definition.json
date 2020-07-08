@@ -9,12 +9,18 @@
     "en": "Enter your email and password"
   },
   "register_acc_hostel": {
-    "en": "Don't have account? Sign up here!"
+    "en": "Sign up"
   },
   "email": {
     "en": "Email"
   },
   "forgot_password": {
-    "en": "Forgot your password? Change it here!"
+    "en": "Forgotten password"
+  },
+  "title_WRONGUSERPASS": {
+    "en": "Incorrect email or password"
+  },
+  "descr_WRONGUSERPASS": {
+    "en": "Either no user with this email could be found, or the password you gave was wrong. Please check the email and try again."
   }
 }
