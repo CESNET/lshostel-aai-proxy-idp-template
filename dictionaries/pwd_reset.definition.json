@@ -12,7 +12,7 @@
     "en": "Link to reset password has been sent"
   },
   "ok_text": {
-    "em": "We have sent you an email with instructions on how to reset your password."
+    "em": "We have sent you an email with instructions on how to reset your password. Check your inbox and follow the instructions. After you successfully setup new password, go to the service and log in with the new credentials."
   },
   "err_header": {
     "en": "Something went wrong"

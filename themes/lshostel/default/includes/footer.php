@@ -5,8 +5,9 @@ if(!empty($this->data['htmlinject']['htmlContentPost'])) {
 	}
 }
 ?>
-</div><!-- #content -->
-</div><!-- #wrap -->
+</div>
+</div>
+</div>
 
 <div id="footer">
 
@@ -25,7 +26,7 @@ if(!empty($this->data['htmlinject']['htmlContentPost'])) {
 	</div>
     </div>
 	
-</div><!-- #footer -->
+</div>
 
 </body>
 </html>
