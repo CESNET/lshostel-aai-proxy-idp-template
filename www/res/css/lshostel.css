@@ -67,8 +67,15 @@ hr {
 #footer {
 	margin-top: 0;
 	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
 	text-align: left;
 	padding: 16px;
+
+	color: #555555;
+	font-family: 'Roboto Condensed', Arial, Verdana, sans-serif;
+	font-weight: 300;
+	font-size: 14px;
+
 }
 #footer img {
 	margin: 0 16px;
@@ -82,4 +89,24 @@ hr {
 
 .logo-wrap img {
 	margin: auto;
+}
+#footer a{
+	text-transform: uppercase;
+	display: block;
+	position: relative;
+	border: 0;
+	outline: 0;
+}
+
+#footer a:link, a:visited, a:active {
+	color: inherit;
+}
+
+#eu {
+	padding-left: 85px;
+	min-height: 60px;
+	line-height: 16px;
+	background: url(../img/flag_eu.png) left top no-repeat transparent;
+	font-size: 83.33% !important;
+
 }
