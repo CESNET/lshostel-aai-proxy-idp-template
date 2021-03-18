@@ -2,11 +2,11 @@
   "header": {
     "en": "Forgot your password?"
   },
-  "email": {
-    "en": "Email"
+  "username": {
+    "en": "Username"
   },
   "text": {
-    "en": "Enter your email. We'll send you an email with instructions on how to reset your password."
+    "en": "Enter your username. We will send you an email with instructions on how to reset your password."
   },
   "ok_header": {
     "en": "Link to reset password has been sent"
@@ -18,7 +18,7 @@
     "en": "Something went wrong"
   },
   "err_text_part1": {
-    "en": "Please check the filled email is correct."
+    "en": "Please check the filled username is correct."
   },
   "err_text_part2": {
     "en": "If you have problem with recovering your password, please contact "

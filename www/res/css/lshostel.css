@@ -19,14 +19,18 @@ body {
 }
 
 #wrap {
-        margin: 2em auto;
-        max-width: 1024px;
+	margin: 2em auto;
+	max-width: 1024px;
+	box-shadow:0 1rem 3rem 0.5rem rgba(0, 0, 0, .15);
 }
-#content {
-	padding-left: 5%;
-	padding-right: 5%;
-	margin-top: 15vw;
-	margin-bottom: 15vw;
+.content {
+	margin-top: calc(50vh - 335px);
+	padding: 25px 5%;
+}
+
+.content-error {
+	margin-top: calc(50vh - 415px) !important;
+	padding: 25px 5%;
 }
 
 .btn:hover {
@@ -70,21 +74,27 @@ hr {
 	border-bottom: 1px solid #ddd;
 	text-align: left;
 	padding: 16px;
-
 	color: #555555;
 	font-family: 'Roboto Condensed', Arial, Verdana, sans-serif;
 	font-weight: 300;
 	font-size: 14px;
-
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
 }
+
 #footer img {
 	margin: 0 16px;
 }
 
-
 #login_form_links {
 	margin-top: 50px;
 	margin-bottom: -32px;
+}
+
+.logo-wrap {
+	padding-bottom: 25px;
 }
 
 .logo-wrap img {
@@ -108,5 +118,18 @@ hr {
 	line-height: 16px;
 	background: url(../img/flag_eu.png) left top no-repeat transparent;
 	font-size: 83.33% !important;
+}
 
+.alert {
+	margin-right: -15px;
+	margin-left: -15px;
+}
+
+@media(min-height: 960px) {
+	.logo-wrap {
+		padding-bottom: 50px;
+	}
+	#content {
+		padding: 50px 5%;
+	}
 }
