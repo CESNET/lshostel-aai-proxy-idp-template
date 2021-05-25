@@ -68,7 +68,7 @@ header('X-Frame-Options: SAMEORIGIN');
     ?>
 
     <link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML\Module::getModuleUrl('lshostel/res/bootstrap/css/bootstrap.min.css'); ?>" />
-    <link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML\Module::getModuleUrl('lshostel/res/css/lshostel.css'); ?>" />
+    <link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML\Module::getModuleUrl('lshostel/res/css/lshostel-bbmri.css'); ?>" />
 
     <meta name="robots" content="noindex, nofollow" />
 
