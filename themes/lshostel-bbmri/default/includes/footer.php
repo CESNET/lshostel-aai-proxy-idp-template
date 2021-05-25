@@ -11,7 +11,7 @@ if(!empty($this->data['htmlinject']['htmlContentPost'])) {
 
 <div id="footer">
 
-    <div style="margin: 0px auto; max-width: 1000px;">
+    <div style="margin: 0px auto; max-width: 1000px;" class="clearfix">
 
 	<div style="float: left;">
 		<img src="<?php echo SimpleSAML\Module::getModuleUrl('lshostel/res/img/BBMRI-ERIC-gateway-for-health_216.png') ?>">
