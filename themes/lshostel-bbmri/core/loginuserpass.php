@@ -196,7 +196,7 @@ if($onLoad !== '') {
                             <?php echo $this->t('{lshostel:lshostel:register_acc_hostel}') ?>
                         </a>
                          |
-                        <a class="btn btn-link" href="<?php echo SimpleSAML\Module::getModuleURL("lshostel/pwd_reset.php");?>">
+                        <a class="btn btn-link" href="<?php echo SimpleSAML\Module::getModuleURL("lshostel/pwd_reset_bbmri.php");?>">
                             <?php echo $this->t('{lshostel:lshostel:forgot_password}') ?>
                         </a>
                     </div>
