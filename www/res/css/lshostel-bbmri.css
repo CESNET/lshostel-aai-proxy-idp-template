@@ -41,22 +41,24 @@ body {
 	border-bottom: 1px solid #ddd;
 	background: transparent;
 }
+
 .ui-widget-header .ui-state-default {
 	border: 0;
 	background: #fff;
 	color: #337ab7;
 }
+
 .ui-widget-header .ui-state-default:hover {
-        background: #eee;
-        color: #23527c;
+	background: #eee;
+	color: #23527c;
 }
 
 .ui-widget-header .ui-state-active {
-        border: 1px solid #ddd;
+	border: 1px solid #ddd;
 }
 
 .ui-widget-header .ui-state-active:hover {
-        background: #fff;
+	background: #fff;
 }
 
 .col-align-center {
@@ -78,6 +80,7 @@ hr {
 	font-weight: 300;
 	font-size: 14px;
 }
+
 #footer img {
 	margin: 0 16px;
 }
@@ -90,6 +93,7 @@ hr {
 .logo-wrap img {
 	margin: auto;
 }
+
 #footer a{
 	text-transform: uppercase;
 	display: block;
