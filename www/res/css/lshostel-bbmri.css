@@ -4,15 +4,8 @@ html {
 }
 
 html, body {
-	margin:0;
-	padding:0;
-}
-
-#wrap {
-	max-width: 40%;
-	padding: 3% 1% 1%;
-	margin-top: 3%;
-	margin-bottom: 110px;
+	margin: 0;
+	padding: 0;
 }
 
 .ui-widget-content {
