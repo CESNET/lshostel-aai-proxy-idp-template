@@ -1,0 +1,115 @@
+html {
+	position:relative;
+	min-height: 100%;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+.ui-widget-content {
+	border: 0 solid #ddd;
+}
+
+#header {
+	background: transparent;
+}
+
+#header h1 {
+	line-height: 32px;
+	font-size: 28px;
+	color: #222;
+}
+
+#header img {
+	margin: 0 auto;
+}
+
+#wrap {
+	margin: 2em auto;
+	max-width: 1024px;
+}
+
+#content {
+	padding-left: 5%;
+	padding-right: 5%;
+	margin-top: 10vw;
+}
+
+.btn:hover {
+	background-image: none;
+}
+
+.ui-widget-header {
+	border-width: 0;
+	border-bottom: 1px solid #ddd;
+	background: transparent;
+}
+
+.ui-widget-header .ui-state-default {
+	border: 0;
+	background: #fff;
+	color: #337ab7;
+}
+
+.ui-widget-header .ui-state-default:hover {
+	background: #eee;
+	color: #23527c;
+}
+
+.ui-widget-header .ui-state-active {
+	border: 1px solid #ddd;
+}
+
+.ui-widget-header .ui-state-active:hover {
+	background: #fff;
+}
+
+.col-align-center {
+	float: none;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+hr {
+	border-top: 1px solid #ddd;
+}
+
+#footer {
+	margin-top: 0;
+	border-top: 1px solid #ddd;
+	text-align: left;
+	padding: 16px;
+	color: #555555;
+	font-weight: 300;
+	font-size: 14px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100px;
+}
+
+#footer img {
+	margin: 0 16px;
+}
+
+#login_form_links {
+	margin-top: 50px;
+	margin-bottom: -32px;
+}
+
+.logo-wrap img {
+	margin: auto;
+}
+
+#footer a {
+	position: relative;
+	border: 0;
+	outline: 0;
+}
+
+#footer a:link, a:visited, a:active {
+	color: inherit;
+}

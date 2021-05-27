@@ -1,5 +1,13 @@
 <?php
 
+use SimpleSAML\Configuration;
+
+const CONFIG_FILE_NAME = 'module_lshostel.php';
+const REGISTER_LINK = 'register_link';
+
+$conf = Configuration::getConfig(CONFIG_FILE_NAME);
+$register_link = $conf->getString(REGISTER_LINK);
+
 if (strlen($this->data['username']) > 0) {
 	$this->data['autofocus'] = 'password';
 } else {
@@ -184,7 +192,7 @@ if($onLoad !== '') {
                         </button>
                     </div>
                     <div class="form-group text-center">
-                        <a class="btn btn-link" href="https://perun.bbmri-eric.eu/non/registrar/?vo=lifescience_hostel">
+                        <a class="btn btn-link" href="<?php echo $register_link ?>">
                             <?php echo $this->t('{lshostel:lshostel:register_acc_hostel}') ?>
                         </a>
                          |

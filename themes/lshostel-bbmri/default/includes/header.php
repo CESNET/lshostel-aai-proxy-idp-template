@@ -87,14 +87,19 @@ if(!empty($this->data['htmlinject']['htmlContentHead'])) {
 	}
 }
 
+
+
+
 if ($this->isLanguageRTL()) {
 ?>
 	<link rel="stylesheet" type="text/css" href="/<?php echo $this->data['baseurlpath']; ?>resources/default-rtl.css" />
 <?php	
 }
 ?>
-    <link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML\Module::getModuleUrl('lshostel/res/bootstrap/css/bootstrap.min.css'); ?>" />
-    <link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML\Module::getModuleUrl('lshostel/res/css/lshostel.css'); ?>" />
+
+        <link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML\Module::getModuleUrl('lshostel/res/bootstrap/css/bootstrap.min.css'); ?>" />
+        <link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML\Module::getModuleUrl('lshostel/res/css/lshostel-bbmri.css'); ?>" />
+	
 	<meta name="robots" content="noindex, nofollow" />
 	
 
@@ -118,24 +123,20 @@ if($onLoad !== '') {
 }
 ?>
 <body<?php echo $onLoad; ?>>
-
 <div id="wrap">
-	
 	<div id="header">
-        <img src="<?php echo SimpleSAML\Module::getModuleUrl('lshostel/res/img/lshostel_256.png'); ?>" alt="Life Science Hostel logo">
+		<img src="<?php echo SimpleSAML\Module::getModuleUrl('lshostel/res/img/lshostel_256.png'); ?>"
+             alt="Life Science Hostel logo">
 		<h1>
 		<?php 
 			echo (isset($this->data['header']) ? $this->data['header'] : 'Life Science Hostel');
 		?>
 		</h1>
 	</div>
-
 	<div id="content">
-
-<?php
-
-if(!empty($this->data['htmlinject']['htmlContentPre'])) {
-	foreach($this->data['htmlinject']['htmlContentPre'] AS $c) {
-		echo $c;
-	}
-}
+    <?php
+        if(!empty($this->data['htmlinject']['htmlContentPre'])) {
+            foreach($this->data['htmlinject']['htmlContentPre'] AS $c) {
+                echo $c;
+            }
+        }

@@ -17,17 +17,9 @@ $this->data['head'] .= '<script type="text/javascript" src="' . SimpleSAML\Modul
 
 $this->data['head'] .= searchScript();
 
-
-
 $this->includeAtTemplateBase('includes/header.php');
 
 $this->includeAtTemplateBase('includes/footer.php');
-
-
-
-
-
-
 
 
 function searchScript() {

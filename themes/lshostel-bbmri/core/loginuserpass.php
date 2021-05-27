@@ -68,7 +68,7 @@ header('X-Frame-Options: SAMEORIGIN');
     ?>
 
     <link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML\Module::getModuleUrl('lshostel/res/bootstrap/css/bootstrap.min.css'); ?>" />
-    <link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML\Module::getModuleUrl('lshostel/res/css/lshostel.css'); ?>" />
+    <link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML\Module::getModuleUrl('lshostel/res/css/lshostel-bbmri.css'); ?>" />
 
     <meta name="robots" content="noindex, nofollow" />
 
@@ -196,7 +196,7 @@ if($onLoad !== '') {
                             <?php echo $this->t('{lshostel:lshostel:register_acc_hostel}') ?>
                         </a>
                          |
-                        <a class="btn btn-link" href="<?php echo SimpleSAML\Module::getModuleURL("lshostel/pwd_reset.php");?>">
+                        <a class="btn btn-link" href="<?php echo SimpleSAML\Module::getModuleURL("lshostel/pwd_reset_bbmri.php");?>">
                             <?php echo $this->t('{lshostel:lshostel:forgot_password}') ?>
                         </a>
                     </div>
