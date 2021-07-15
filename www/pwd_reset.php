@@ -40,8 +40,6 @@ function sendPasswordResetEmail($userName) {
     $emailAttr = $pwdConf->getString(PWDRESET_PERUN_EMAIL_ATTR);
 
     $userName = trim($userName);
-    $userNameParts = explode('@', $userName, 2);
-    $userName = $userNameParts[0] . '_' . strtolower($userNameParts[1]);
 
     $uid = [$userName . $lsHostelScope];
     $user = null;
@@ -69,6 +67,5 @@ function sendPasswordResetEmail($userName) {
             'language' => LANG_EN
         ]);
 
-    Logger::debug(print_r($response, true));
-
+    Logger::debug("LS Hostel PWD Reset - Perun response " . json_encode($response));
 }

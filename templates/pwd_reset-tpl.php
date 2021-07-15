@@ -97,12 +97,12 @@ if($onLoad !== '') {
 
 <div id="wrap">
 
-    <div id="content">
+    <div id="content" class="content">
         <div class="row pl-0 pr-0">
-            <div class="col-sm-6 logo-wrap col-align--center">
-                <img src="<?php echo SimpleSAML\Module::getModuleUrl('lshostel/res/img/lshostel_256.png'); ?>" alt="Life Science Hostel logo">
+            <div class="col-md-6 col-md-offset-3 logo-wrap col-align--center">
+                <img src="<?php echo SimpleSAML\Module::getModuleUrl('lshostel/res/img/ls_logo.png'); ?>" alt="Life Science Hostel logo">
             </div>
-            <div class="col-sm-6">
+            <div class="col-md-6 col-md-offset-3">
                 <?php
 echo "<h1> " . $this->t('{lshostel:pwd_reset:header}') . "</h1>";
 $userName = "";
@@ -125,13 +125,18 @@ if (isset($_POST['username'])) {
 
         <?php
     } catch (\Exception $exception) {
+        $emailAddress = $config->getString('technicalcontact_email');
+        if (!str_starts_with("mailto:", $emailAddress)) {
+            $emailAddress = "mailto:" . $emailAddress;
+        }
+
         ?>
         <div class="alert alert-danger" >
             <span class="glyphicon glyphicon-exclamation-sign" style="float:left; font-size: 38px; margin-right: 10px;"></span>
             <strong><?php echo $this->t('{lshostel:pwd_reset:err_header}');?></strong>
             <p><?php echo $this->t('{lshostel:pwd_reset:err_text_part1}');?></p>
             <p><?php echo $this->t('{lshostel:pwd_reset:err_text_part2}');?>
-                <a href="<?php echo $config->getString('technicalcontact_email'); ?>"><?php echo $this->t('{lshostel:pwd_reset:support}');?></a>.
+                <a href="<?php echo $emailAddress ?>"><?php echo $this->t('{lshostel:pwd_reset:support}');?></a>.
             </p>
         </div>
 
@@ -148,10 +153,12 @@ if (!$_POST['passwordResetOk']) {
 
     <form action="" method="post" name="passwd_reset" class="form-horizontal">
         <div class="form-group">
-            <label class="sr-only" for="inlineFormInputGroup"><?php echo $this->t('{{lshostel:pwd_reset:email}'); ?></label>
+            <label class="sr-only" for="inlineFormInputGroup"><?php echo $this->t('{{lshostel:pwd_reset:username}'); ?></label>
             <div class="input-group mb-2">
-                <span class="input-group-addon" id="basic-addon1">@</span>
-                <input id="username" type="email" name="username" class="form-control" value="<?php echo $userName; ?>" placeholder="Email" aria-describedby="basic-addon1"/>
+                            <span class="input-group-addon" >
+                                    <span class=" glyphicon glyphicon-user" id="basic-addon1"></span>
+                            </span>
+                <input id="username" name="username" class="form-control" value="<?php echo $userName ?>" placeholder="Username" aria-describedby="basic-addon1"/>
             </div>
         </div>
 

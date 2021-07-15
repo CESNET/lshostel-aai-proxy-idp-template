@@ -3,24 +3,27 @@
     "en": "Please provide your mail so that we can contact you for further information or let you know the issue was fixed."
   },
   "user_pass_header": {
-    "en": "Life Science Hostel Login"
+    "en": "LS Account login"
   },
   "user_pass_text": {
-    "en": "Enter your email and password"
+    "en": "Enter your username and password"
   },
   "register_acc_hostel": {
-    "en": "Sign up"
+    "en": "Create a new LS account"
   },
   "email": {
     "en": "Email"
+  },
+  "username": {
+    "en": "Username"
   },
   "forgot_password": {
     "en": "Forgotten password"
   },
   "title_WRONGUSERPASS": {
-    "en": "Incorrect email or password"
+    "en": "Incorrect username or password"
   },
   "descr_WRONGUSERPASS": {
-    "en": "Either no user with this email could be found, or the password you gave was wrong. Please check the email and try again."
+    "en": "Either no user with this username could be found, or the password you gave was wrong. Please check the username and try again."
   }
 }
