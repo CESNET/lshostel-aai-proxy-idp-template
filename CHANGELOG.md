@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [v2.0.0]
+#### Added
+- New template for LS hostel, old template migrated as lshostel-bbmri
+
 ## [v1.3.0]
 #### Changed
 - Redesign LS Hostel theme
