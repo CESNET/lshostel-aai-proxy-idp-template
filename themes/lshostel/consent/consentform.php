@@ -1,4 +1,5 @@
-<?php
+<?php declare(strict_types=1);
+
 /**
  * Template form for giving consent.
  *
@@ -11,8 +12,6 @@
  * - 'noData': Parameters which should be included in the no-request.
  * - 'attributes': The attributes which are about to be released.
  * - 'sppp': URL to the privacy policy of the destination, or FALSE.
- *
- * @package SimpleSAMLphp
  */
 assert('is_array($this->data["srcMetadata"])');
 assert('is_array($this->data["dstMetadata"])');
@@ -56,8 +55,12 @@ $attributes = $this->data['attributes'];
 
 $this->data['header'] = $this->t('{consent:consent:consent_header}');
 
-$this->data['head'] = '<link rel="stylesheet" media="screen" type="text/css" href="' . SimpleSAML\Module::getModuleUrl('consent/style.css')  . '" />';
-$this->data['head'] .= '<link rel="stylesheet" media="screen" type="text/css" href="' . SimpleSAML\Module::getModuleUrl('lshostel/res/css/consent.css')  . '" />';
+$this->data['head'] = '<link rel="stylesheet" media="screen" type="text/css" href="' . SimpleSAML\Module::getModuleUrl(
+    'consent/style.css'
+) . '" />';
+$this->data['head'] .= '<link rel="stylesheet" media="screen" type="text/css" href="' . SimpleSAML\Module::getModuleUrl(
+    'lshostel/res/css/consent.css'
+) . '" />';
 
 $this->includeAtTemplateBase('includes/header.php');
 ?>
@@ -74,34 +77,31 @@ echo $this->t(
 if (array_key_exists('descr_purpose', $this->data['dstMetadata'])) {
     echo '</p><p>' . $this->t(
         '{consent:consent:consent_purpose}',
-        array(
+        [
             'SPNAME' => $dstName,
             'SPDESC' => $this->getTranslation(
-                SimpleSAML\Utils\Arrays::arrayize(
-                    $this->data['dstMetadata']['descr_purpose'],
-                    'en'
-                )
+                SimpleSAML\Utils\Arrays::arrayize($this->data['dstMetadata']['descr_purpose'], 'en')
             ),
-        )
+        ]
     );
 }
 ?>
 
 <?php
-if ($this->data['sppp'] !== false) {
-    echo "<p>" . htmlspecialchars($this->t('{consent:consent:consent_privacypolicy}')) . " ";
-    echo "<a target='_blank' href='" . htmlspecialchars($this->data['sppp']) . "'>" . $dstName . "</a>";
-    echo "</p>";
+if (false !== $this->data['sppp']) {
+    echo '<p>' . htmlspecialchars($this->t('{consent:consent:consent_privacypolicy}')) . ' ';
+    echo "<a target='_blank' href='" . htmlspecialchars($this->data['sppp']) . "'>" . $dstName . '</a>';
+    echo '</p>';
 }
 
 /**
- * Recursive attribute array listing function
+ * Recursive attribute array listing function.
  *
  * @param SimpleSAML_XHTML_Template $t          Template object
  * @param array                     $attributes Attributes to be presented
  * @param string                    $nameParent Name of parent element
  *
- * @return string HTML representation of the attributes 
+ * @return string HTML representation of the attributes
  */
 function present_attributes($t, $attributes, $nameParent)
 {
@@ -113,7 +113,7 @@ function present_attributes($t, $attributes, $nameParent)
         $str = '<table class="table attributes" ' . $summary . '>';
     } else {
         $parentStr = '';
-        $str = '<table id="table_with_attributes" class="table attributes" '. $summary .'>';
+        $str = '<table id="table_with_attributes" class="table attributes" ' . $summary . '>';
         $str .= "\n" . '<caption>' . $t->t('{consent:consent:table_caption}') .
             '</caption>';
     }
@@ -147,7 +147,7 @@ function present_attributes($t, $attributes, $nameParent)
                 // we hawe several values
                 $str .= '<ul>';
                 foreach ($value as $listitem) {
-                    if ($nameraw === 'jpegPhoto') {
+                    if ('jpegPhoto' === $nameraw) {
                         $str .= '<li><img src="data:image/jpeg;base64,' .
                             htmlspecialchars($listitem) .
                             '" alt="User photo" /></li>';
@@ -158,7 +158,7 @@ function present_attributes($t, $attributes, $nameParent)
                 $str .= '</ul>';
             } elseif (isset($value[0])) {
                 // we hawe only one value
-                if ($nameraw === 'jpegPhoto') {
+                if ('jpegPhoto' === $nameraw) {
                     $str .= '<img src="data:image/jpeg;base64,' .
                         htmlspecialchars($value[0]) .
                         '" alt="User photo" />';
@@ -181,15 +181,16 @@ function present_attributes($t, $attributes, $nameParent)
             $str .= '</td></tr>';
         }	// end else: not child table
     }	// end foreach
-    $str .= isset($attributes)? '</table>':'';
+    $str .= isset($attributes) ? '</table>' : '';
+
     return $str;
 }
 
 echo '<h3 id="attributeheader">' .
-    $this->t(
-        '{consent:consent:consent_attributes_header}',
-        array( 'SPNAME' => $dstName, 'IDPNAME' => $srcName)
-    ) .
+    $this->t('{consent:consent:consent_attributes_header}', [
+        'SPNAME' => $dstName,
+        'IDPNAME' => $srcName,
+    ]) .
     '</h3>';
 
 echo present_attributes($this, $attributes, '');
@@ -202,26 +203,26 @@ echo present_attributes($this, $attributes, '');
 
             <form action="<?php echo htmlspecialchars($this->data['yesTarget']); ?>">
 				<?php
-				if ($this->data['usestorage']) {
-					$checked = ($this->data['checked'] ? 'checked="checked"' : '');
-					echo '<div class="checkbox">
+                if ($this->data['usestorage']) {
+                    $checked = ($this->data['checked'] ? 'checked="checked"' : '');
+                    echo '<div class="checkbox">
     	        <label>
       		    <input type="checkbox" name="saveconsent" value="1" /> ' . $this->t('{perun:consent:remember}') . '
 	            </label>    
                 </div>';
-				}
-				?>
+                }
+                ?>
 
 				<?php
-				// Embed hidden fields...
-				foreach ($this->data['yesData'] as $name => $value) {
-					echo '<input type="hidden" name="' . htmlspecialchars($name) .
-						'" value="' . htmlspecialchars($value) . '" />';
-				}
-				?>
+                // Embed hidden fields...
+                foreach ($this->data['yesData'] as $name => $value) {
+                    echo '<input type="hidden" name="' . htmlspecialchars($name) .
+                        '" value="' . htmlspecialchars($value) . '" />';
+                }
+                ?>
 
                 <button type="submit" name="yes" class="btn btn-lg btn-success btn-block" id="yesbutton">
-					<?php echo htmlspecialchars($this->t('{consent:consent:yes}')) ?>
+					<?php echo htmlspecialchars($this->t('{consent:consent:yes}')); ?>
                 </button>
 
 
@@ -235,13 +236,13 @@ echo present_attributes($this, $attributes, '');
             <form action="<?php echo htmlspecialchars($this->data['noTarget']); ?>">
 
 				<?php
-				foreach ($this->data['noData'] as $name => $value) {
-					echo('<input type="hidden" name="' . htmlspecialchars($name) .
-						'" value="' . htmlspecialchars($value) . '" />');
-				}
-				?>
+                foreach ($this->data['noData'] as $name => $value) {
+                    echo '<input type="hidden" name="' . htmlspecialchars($name) .
+                        '" value="' . htmlspecialchars($value) . '" />';
+                }
+                ?>
                 <button type="submit" class="btn btn-lg btn-default btn-block  btn-no" name="no" id="nobutton">
-					<?php echo htmlspecialchars($this->t('{consent:consent:no}')) ?>
+					<?php echo htmlspecialchars($this->t('{consent:consent:no}')); ?>
                 </button>
             </form>
 
