@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/CESNET/lshostel-aai-proxy-idp-template/compare/v2.0.0...v2.1.0) (2022-03-29)
+
+
+### Features
+
+* Semantic release ([#9](https://github.com/CESNET/lshostel-aai-proxy-idp-template/issues/9)) ([d391179](https://github.com/CESNET/lshostel-aai-proxy-idp-template/commit/d3911795ded519d57608c8002bd330c9afdfd65b))
+
 # Change Log
 All notable changes to this project will be documented in this file.
 
