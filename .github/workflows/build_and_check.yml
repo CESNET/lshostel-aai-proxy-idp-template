@@ -16,7 +16,6 @@ jobs:
     strategy:
       matrix:
         php-version: [7.4, 8.0]
-        composer-version: [1, 2]
 
     steps:
       - uses: actions/checkout@v3
@@ -29,7 +28,7 @@ jobs:
         uses: php-actions/composer@v6
         with:
           php_version: ${{ matrix.php-version }}
-          version: ${{ matrix.composer-version }}
+          version: 2
           php_extensions: curl iconv intl json ldap
       - name: Run easy coding standard
         run: vendor/bin/ecs check
