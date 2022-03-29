@@ -1,8 +1,9 @@
-<?php
-if(!empty($this->data['htmlinject']['htmlContentPost'])) {
-	foreach($this->data['htmlinject']['htmlContentPost'] AS $c) {
-		echo $c;
-	}
+<?php declare(strict_types=1);
+
+if (!empty($this->data['htmlinject']['htmlContentPost'])) {
+    foreach ($this->data['htmlinject']['htmlContentPost'] as $c) {
+        echo $c;
+    }
 }
 ?>
 </div>
@@ -14,7 +15,7 @@ if(!empty($this->data['htmlinject']['htmlContentPost'])) {
     <div style="margin: 0px auto; max-width: 1000px;">
 
 	<div style="float: left;">
-		<img src="<?php echo SimpleSAML\Module::getModuleUrl('lshostel/res/img/BBMRI-ERIC-gateway-for-health_216.png') ?>">
+		<img src="<?php echo SimpleSAML\Module::getModuleUrl('lshostel/res/img/BBMRI-ERIC-gateway-for-health_216.png'); ?>">
 	</div>
 	
 	<div style="float: left;">
@@ -22,7 +23,7 @@ if(!empty($this->data['htmlinject']['htmlContentPost'])) {
 			&nbsp; &nbsp; +43 316 34 99 17-0 &nbsp;
 			<a href="mailto:contact@bbmri-eric.eu">contact@bbmri-eric.eu</a>
 		</p>
-		<p>Copyright © BBMRI-ERIC <?php echo date("Y"); ?> </p>
+		<p>Copyright © BBMRI-ERIC <?php echo date('Y'); ?> </p>
 	</div>
     </div>
 	

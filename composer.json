@@ -10,9 +10,23 @@
             "email": "vyskocilpavel@muni.cz"
         }
     ],
+    "config": {
+        "platform": {
+            "php": "7.4"
+        }
+    },
     "require": {
         "simplesamlphp/composer-module-installer": "~1.0",
         "simplesamlphp/simplesamlphp": "~1.17",
-        "cesnet/simplesamlphp-module-perun": "~4.0"
+        "cesnet/simplesamlphp-module-perun": "^7.0.0"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*",
+        "symplify/easy-coding-standard": "^10.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "simplesamlphp/composer-module-installer": true
+        }
     }
 }

@@ -1,13 +1,18 @@
-<?php
-$this->data['header'] =  '<i class="glyphicon glyphicon-exclamation-sign text-danger"></i> '. $this->t($this->data['dictTitle']);
+<?php declare(strict_types=1);
 
-$this->data['head'] = <<<EOF
+$this->data['header'] = '<i class="glyphicon glyphicon-exclamation-sign text-danger"></i> ' . $this->t(
+    $this->data['dictTitle']
+);
+
+$this->data['head'] = <<<'CODE_SAMPLE'
 <meta name="robots" content="noindex, nofollow" />
 <meta name="googlebot" content="noarchive, nofollow" />
-EOF;
+CODE_SAMPLE;
 
-$this->data['head'] .= '<script src="' . SimpleSAML\Module::getModuleUrl('lshostel/res/js/jquery.js')  . '" ></script>';
-$this->data['head'] .= '<script src="' . SimpleSAML\Module::getModuleUrl('lshostel/res/bootstrap/js/bootstrap.min.js')  . '" ></script>';
+$this->data['head'] .= '<script src="' . SimpleSAML\Module::getModuleUrl('lshostel/res/js/jquery.js') . '" ></script>';
+$this->data['head'] .= '<script src="' . SimpleSAML\Module::getModuleUrl(
+    'lshostel/res/bootstrap/js/bootstrap.min.js'
+) . '" ></script>';
 
 $this->includeAtTemplateBase('includes/header.php');
 ?>
@@ -30,11 +35,10 @@ if (isset($this->data['includeTemplate'])) {
 <?php
 // print out exception only if the exception is available
 if ($this->data['showerrors']) {
-?>
+    ?>
     	<p style="margin: 1px"><?php echo htmlspecialchars($this->data['error']['exceptionMsg']); ?></p>
         <pre style="padding: 1em; font-family: monospace;"><?php
-            echo htmlspecialchars($this->data['error']['exceptionTrace']); 
-	?></pre>
+            echo htmlspecialchars($this->data['error']['exceptionTrace']); ?></pre>
 <?php
 }
 ?>
@@ -44,7 +48,7 @@ if ($this->data['showerrors']) {
  * the technical contact email address has been set.
  */
 if (isset($this->data['errorReportAddress'])) {
-?>
+    ?>
 <br>
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -65,7 +69,7 @@ if (isset($this->data['errorReportAddress'])) {
 		<label class="col-sm-2 control-label" for="email"><?php echo $this->t('report_email'); ?></label>
 		<div class="col-sm-10">
 			<input name="email" type="email" class="form-control" id="email" placeholder="Email" required>
-			<span  class="help-block"><?php echo $this->t('{lshostel:lshostel:error_report_email_message}');?></span>
+			<span  class="help-block"><?php echo $this->t('{lshostel:lshostel:error_report_email_message}'); ?></span>
 		</div>
 	</div>
 
