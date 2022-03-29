@@ -1,9 +1,17 @@
 <?php
 
+use SimpleSAML\Configuration;
+
+const CONFIG_FILE_NAME = 'module_lshostel.php';
+const REGISTER_LINK = 'register_link';
+
+$conf = Configuration::getConfig(CONFIG_FILE_NAME);
+$register_link = $conf->getString(REGISTER_LINK);
+
 if (strlen($this->data['username']) > 0) {
-	$this->data['autofocus'] = 'password';
+    $this->data['autofocus'] = 'password';
 } else {
-	$this->data['autofocus'] = 'username';
+    $this->data['autofocus'] = 'username';
 }
 
 
@@ -112,47 +120,47 @@ if($onLoad !== '') {
 
                             <?php
                             if ($this->data['errorcode'] === 'WRONGUSERPASS') {
+                            ?>
+                            <strong>
+                                <?php
+                                echo htmlspecialchars($this->t(
+                                    '{lshostel:lshostel:title_WRONGUSERPASS}',
+                                    $this->data['errorparams']
+                                ));
                                 ?>
-                                <strong>
-                                    <?php
-                                    echo htmlspecialchars($this->t(
-                                        '{lshostel:lshostel:title_WRONGUSERPASS}',
-                                        $this->data['errorparams']
-                                    ));
-                                    ?>
-                                </strong>
+                            </strong>
+                        </p>
+                        <p>
+                            <?php
+                            echo htmlspecialchars($this->t(
+                                '{lshostel:lshostel:descr_WRONGUSERPASS}',
+                                $this->data['errorparams']
+                            ));
+                            ?>
+                        </p>
+                        <?php
+                        } else {
+                            ?>
+                            <strong>
+                                <?php
+                                echo htmlspecialchars($this->t(
+                                    '{errors:title_' . $this->data['errorcode'] . '}',
+                                    $this->data['errorparams']
+                                ));
+                                ?>
+                            </strong>
                             </p>
                             <p>
                                 <?php
                                 echo htmlspecialchars($this->t(
-                                    '{lshostel:lshostel:descr_WRONGUSERPASS}',
+                                    '{errors:descr_' . $this->data['errorcode'] . '}',
                                     $this->data['errorparams']
                                 ));
                                 ?>
                             </p>
-                        <?php
-                            } else {
-                                ?>
-                                <strong>
-                                    <?php
-                                    echo htmlspecialchars($this->t(
-                                        '{errors:title_' . $this->data['errorcode'] . '}',
-                                        $this->data['errorparams']
-                                    ));
-                                    ?>
-                                </strong>
-                                </p>
-                                <p>
-                                    <?php
-                                    echo htmlspecialchars($this->t(
-                                        '{errors:descr_' . $this->data['errorcode'] . '}',
-                                        $this->data['errorparams']
-                                    ));
-                                    ?>
-                                </p>
                             <?php
-                            }
-                            ?>
+                        }
+                        ?>
 
                     </div>
                     <?php
@@ -184,10 +192,10 @@ if($onLoad !== '') {
                         </button>
                     </div>
                     <div class="form-group text-center">
-                        <a class="btn btn-link" href="https://perun.bbmri-eric.eu/non/registrar/?vo=lifescience_hostel">
+                        <a class="btn btn-link" href="<?php echo $register_link ?>">
                             <?php echo $this->t('{lshostel:lshostel:register_acc_hostel}') ?>
                         </a>
-                         |
+                        |
                         <a class="btn btn-link" href="<?php echo SimpleSAML\Module::getModuleURL("lshostel/pwd_reset.php");?>">
                             <?php echo $this->t('{lshostel:lshostel:forgot_password}') ?>
                         </a>
@@ -200,13 +208,13 @@ if($onLoad !== '') {
                 </form>
 
             </div>
-            <?php
+<?php
 
-        if(!empty($this->data['htmlinject']['htmlContentPre'])) {
-            foreach($this->data['htmlinject']['htmlContentPre'] AS $c) {
-                echo $c;
-            }
-        }
+if(!empty($this->data['htmlinject']['htmlContentPre'])) {
+    foreach($this->data['htmlinject']['htmlContentPre'] AS $c) {
+        echo $c;
+    }
+}
 
 
 $this->includeAtTemplateBase('includes/footer.php');
