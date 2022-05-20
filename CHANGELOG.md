@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/CESNET/lshostel-aai-proxy-idp-template/compare/v2.1.0...v2.1.1) (2022-05-20)
+
+
+### Bug Fixes
+
+* change version constraint for perun module ([1b99cc3](https://github.com/CESNET/lshostel-aai-proxy-idp-template/commit/1b99cc3e764514981ba7ffc4ed13a7c60586b00e))
+
 # [2.1.0](https://github.com/CESNET/lshostel-aai-proxy-idp-template/compare/v2.0.0...v2.1.0) (2022-03-29)
 
 
