@@ -5,6 +5,8 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/cesnet/lshostel-aai-proxy-idp-template/badge)](https://www.codefactor.io/repository/github/cesnet/lshostel-aai-proxy-idp-template)
 [![License](https://poser.pugx.org/bbmri/simplesamlphp-module-lshostel/license)](https://packagist.org/packages/bbmri/simplesamlphp-module-lshostel)
 
+**REPOSITORY HAS BEEN MOVED TO: https://gitlab.ics.muni.cz/perun-proxy-aai/simplesamlphp/simplesamlphp-module-lshostel**
+
 Template for LifeScience Hostel AAI Proxy IdP component
 
  ## Instalation
